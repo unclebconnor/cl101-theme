@@ -5,7 +5,7 @@
         <footer class="copyright center">
             <p class="copyright">
                 © 2016
-                <a href="http://clubbing101.com/" title="Clubbing101" rel="home">Clubbing 101</a>
+                <a href="<?php print home_url(); ?>" title="Clubbing101" rel="home">Clubbing 101</a>
             </p>
             <div class="social-links">
                 <a href="https://www.facebook.com/clubbing101/">

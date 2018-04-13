@@ -32,10 +32,12 @@
   		wp_register_style( 'custom-styles', get_template_directory_uri() .'/assets/css/style.css' );
   		wp_register_style( 'datepicker-style', get_template_directory_uri() .'/assets/css/datepicker.css' );
   		wp_register_style( 'bulma', 'https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.2/css/bulma.min.css' );
+  		wp_register_style( 'google-font', 'https://fonts.googleapis.com/css?family=Montserrat' );
   		
   		wp_enqueue_style( 'custom-styles');
   		wp_enqueue_style( 'datepicker-style');
   		wp_enqueue_style( 'bulma');
+  		wp_enqueue_style( 'google-font');
 	}
 	add_action( 'wp_enqueue_scripts', 'my_custom_styles' );
 

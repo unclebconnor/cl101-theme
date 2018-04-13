@@ -5,7 +5,7 @@
 <?php get_template_part('page-header'); ?>
 
 <div class="page-content main-img"> <!-- Begin Content Container - Closed in Footer-->
-    <div class="container content-area">
+    <div class="container content-area parallax-window">
         <div class="columns">
             <div class="column is-6 is-offset-3"> 
             	<?php 
