@@ -1,0 +1,161 @@
+html, body {
+    margin: 0px;
+    background-color: black;
+}
+
+body {
+    color: white;
+    height: 100%;
+}
+
+p {
+    font-size: 1rem;
+}
+
+h2 {
+    margin: 20px;
+}
+
+h4 {
+    margin: 10px;
+}
+
+
+/* HELPERS */
+.center {
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.full-wide {
+    width: 100%
+}
+
+.no-pad {
+    padding: 0px;
+}
+
+.no-pad ul{
+    padding: 0px;
+}
+
+.inline-block {
+    display: inline-block;
+}
+
+.block {
+    display: block;
+}
+
+
+/* END HELPERS */
+
+
+/* HEADER */
+a:hover {
+    text-decoration:none;
+}
+
+header {
+    position: fixed;
+    height: 70px;
+    width: 100%;
+    background-color: #181303;
+    color: white;
+    top: 0px;
+    margin-bottom:0px;
+    border-radius: 0px;
+    padding: 8px 10px;
+    z-index: 4;
+}
+
+header a {
+    color: white;
+}
+
+header li a {
+    color: white;
+    font-size:12pt;
+    letter-spacing: 2px;
+    font-weight: lighter;
+    font-family: helvetica,sans-serif;
+}
+
+nav {
+    text-align: right;
+}
+
+#lp-dropdown{
+    margin-top: 150px;
+}
+
+.header-item {
+    top: 8px;
+}
+
+#logo-image {
+    width: 200px;
+}
+
+.main-nav div {
+    position: relative;
+    display: inline-block;
+    padding: 10px;
+    font-weight: 500; 
+}
+
+.
+/* END HEADER */
+
+
+/* CONTENT */
+.content-area {
+    margin-top: 50px;
+}
+/* END CONTENT */
+
+
+/* FOOTER */
+footer {
+    border-top: 1px solid white;
+}
+
+footer.copyright {
+    text-align:center;
+    background: black;
+    padding: 40px 80px 30px 80px;
+    color: white;
+    height: 130px;
+}
+
+
+.social-links{
+    font-size: 1.5em;
+    display: inline-block;
+    margin: 10px;
+}
+/* END FOOTER */
+
+
+/* BACKGROUND IMAGE STUFF */
+.main-img{
+    background-image: url("http://localhost:8888/clubbing101/wp-content/uploads/2018/03/Las-Vegas-Night.jpg");
+    height: 100%; 
+    background-attachment: fixed;
+    background-position: top;
+    background-repeat: no-repeat;
+    /*background-size: cover;*/
+}
+
+.parallax-window {
+    height: 550px;
+}
+
+/* END BACKGROUND IMAGE STUFF */
+
+
+.checkbox, .radio {
+    color: black !important;
+}
+

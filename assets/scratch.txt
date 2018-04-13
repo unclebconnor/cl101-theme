@@ -1,0 +1,1 @@
+<?php get_permalink($post->post_parent)==home_url() ? print 'main/' : print''; ?>
