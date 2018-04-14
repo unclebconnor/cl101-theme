@@ -1,17 +1,26 @@
 
-<div class="wFormContainer">
-	<div class="wForm" id="contact-form">
-		<div class="form-breadcrumbs">
+<div class="contact-form-container">
+	<div class='' id="contact-form">
+		<div class="flex-sa is-flex">
 			<!-- breadcrumb images -->
-			<img src="<?php echo get_template_directory_uri(); ?>/assets/images/icon-map.svg" alt="map icon" id='icon-pg-1'/> 
-			<img src="<?php echo get_template_directory_uri(); ?>/assets/images/icon-contact.svg" alt="contact icon" id='icon-pg-2'/>
-			<img src="<?php echo get_template_directory_uri(); ?>/assets/images/icon-trip-details.svg" alt="trip details icon" id='icon-pg-3'/>
+			<div class='icon-group has-text-centered is-link to-pg-1' id='icon-pg-1'>
+				<img src="<?php echo get_template_directory_uri(); ?>/assets/images/icon-map.svg" alt="map icon" />
+				<p>Destination</p>
+			</div>
+			<div class='icon-group has-text-centered is-link to-pg-2' id='icon-pg-2'>
+				<img src="<?php echo get_template_directory_uri(); ?>/assets/images/icon-contact.svg" alt="contact icon" />
+				<p>Contact Info</p>
+			</div>
+			<div class='icon-group has-text-centered is-link to-pg-3' id='icon-pg-3'>
+				<img src="<?php echo get_template_directory_uri(); ?>/assets/images/icon-trip-details.svg" alt="trip details icon" />
+				<p>Trip Details</p>
+			</div>
 		</div>
-		<form action="form-to-email.php" class="" id="contact-form" method="post" name="contact-form">
+		<form action="form-to-email.php" class="column is-8 is-offset-2" id="contact-form" method="post" name="contact-form">
 			<div class="form-page" id="form-page-1">
 				<section id="form-destination">
 					<div class="field">
-						<div class="control">
+						<div class="control is-flex flex-sa">
 							<div class="select">
 								<select
 									id="choose-a-city" 
@@ -19,6 +28,7 @@
 									class="required" 
 									name="Choose a City" 
 									title="Choose a City"
+									style="width:300px"
 								>
 									<option value="" disabled selected>Choose a City</option>
 									<option id="vegas" value="Vegas">Vegas</option>
@@ -30,7 +40,7 @@
 						</div>
 					</div>
 					<div class="field">
-						<div class="control">
+						<div class="control is-flex flex-sa">
     						<button 
     							class="button is-link to-pg-2"
     							type="button" 
@@ -41,8 +51,8 @@
 			</div>
 			<div class="form-page" id="form-page-2" style="display: none;">
 				<section id="form-contact">
-					<div class="field is-grouped">
-						<div class="control">
+					<div class="field">
+						<div class="control is-flex flex-sa">
 							<input 
 								aria-required="true" 
 								class="input required" 
@@ -54,7 +64,9 @@
 								value="" 
 							/>
 						</div>
-						<div class="control"">
+					</div>
+					<div class="field">
+						<div class="control is-flex flex-sa">
 							<input 
 								class="input" 
 								id="last-name" 
@@ -67,7 +79,7 @@
 						</div>
 					</div>
 					<div class="field">
-						<div class="control">
+						<div class="control is-flex flex-sa">
 							<input 
 								aria-required="true" 
 								class="input required" 
@@ -80,7 +92,7 @@
 							/>
 						</div>
 					</div>
-					<div class="control">
+					<div class="control is-flex flex-sa">
 						<input 
 							aria-required="true" 
 							class="input required" 
@@ -93,12 +105,14 @@
 							value=""
 						/>
 					</div>
-					<div class="field is-grouped">
+					<div class="field is-flex flex-sa">
 						<div class="control">
 							<button 
     							class="button is-link to-pg-1"
     							type="button" 
     						>Previous</button>
+    					</div>
+    					<div class="control">
     						<button 
     							class="button is-link to-pg-3"
     							type="button" 
@@ -109,8 +123,8 @@
 			</div>
 			<div class="form-page" id="form-page-3" style="display: none;">
 				<section id="form-details">
-					<div class="field is-grouped">
-						<div class="control">
+					<div class="field">
+						<div class="control is-flex flex-sa">
 							<input 
 								class="input validate-date" 
 								id="arrival-date" 
@@ -121,7 +135,9 @@
 								pattern="[0-9]{1,2}/[0-9]{1,2}/[0-9]{4}|[0-9]{2}" 
 							/>
 						</div>
-						<div class="control">
+					</div>
+					<div class="field">
+						<div class="control is-flex flex-sa">
 							<input 
 								class="input validate-date" 
 								id="departure-date" 
@@ -134,18 +150,23 @@
 
 						</div>
 					</div>
-					<div class="dropdown" >
-						<div class="dropdown-trigger" id="form-count-dropdown">
-							<button class="button" aria-haspopup="true" aria-controls="party-dropdown-menu">
-      							<span>How Many are in your Party?</span>
-      							<span id="count-total-display">0</span>
-      							<span class="icon is-small">
-        							<i class="fas fa-angle-down" aria-hidden="true"></i>
-      							</span>
+					<div class="dropdown is-flex flex-sa field" >
+						<div class="dropdown-trigger full-wide" id="form-count-dropdown">
+							<button class="button full-wide level" aria-haspopup="true" aria-controls="party-dropdown-menu">
+								<div class="level-left">
+									<span class="level-item">Group Size:</span>
+      								<span class="level-item" id="count-total-display">0</span>
+								</div>
+								<div class="level-right">
+									<span class="icon is-small level-item">
+        								<i class="fas fa-angle-down" aria-hidden="true"></i>
+      								</span>
+								</div>
+      							
     						</button>
 						</div>
-					  	<div class="dropdown-menu">
-					  		<div class="dropdown-content" id="party-dropdown-menu" role="menu">
+					  	<div class="dropdown-menu full-wide" id="party-dropdown-menu">
+					  		<div class="dropdown-content" role="menu">
 					  			<div class="field">
 									<div class="control">
 										<input id="count-men" name="count-men" title="Men" type="hidden" value="0"/>
@@ -157,29 +178,46 @@
 										<input id="count-total" name="count-total" title="Total" type="hidden" value="0"/>
 									</div>
 								</div>
-								<div id="count-men-row" class="counter-row">
-									<div>Men</div>
-									<span id="cm-dn"><i class="fas fa-minus-circle"></i></span>
-									<span id="count-men-display" unselectable="on">0</span>
-									<span id="cm-up"><i class="fas fa-plus-circle"></i></span>
+								<div id="count-men-row" class="level">
+									<div class="level-left">
+										<div class="level-item lil-side-margin">Men</div>
+									</div>
+									<div class="level-right lil-side-margin">
+										<span class="center level-item" id="cm-dn"><i class=" fas fa-minus-circle"></i></span>
+										<span class="center level-item" id="count-men-display" class="column is-2" unselectable="on">0</span>
+										<span class="center level-item" id="cm-up"><i class="fas fa-plus-circle"></i></span>
+									</div>
 								</div>
-								<div id="count-women-row" class="counter-row">
-									<div>Women</div>
-									<span id="cw-dn"><i class="fas fa-minus-circle"></i></span>
-									<span id="count-women-display" unselectable="on">0</span>
-									<span id="cw-up"><i class="fas fa-plus-circle"></i></span>
+								<div id="count-women-row" class="level">
+									<div class="level-left">
+										<div class="level-item lil-side-margin">Women</div>
+									</div>
+									<div class="level-right lil-side-margin">
+										<span class="center level-item" id="cw-dn"><i class="fas fa-minus-circle"></i></span>
+										<span class="center level-item" id="count-women-display" class="column is-2" unselectable="on">0</span>
+										<span class="center level-item" id="cw-up"><i class="fas fa-plus-circle"></i></span>
+									</div>
+									
 								</div>
-								<div class="field is-horizontal">
-									<div class="field-label">
-    									<label class="label">Is anyone in your party under 21?</label>
+								<div class="field is-horizontal level">
+									<div class="level-left">
+    									<span class="level-item lil-side-margin">Is anyone under 21?</span>
   									</div>
-  									<div class="control">
-  										<label class="radio">
-          									<input type="radio" name="under-21" value="Yes"/>Yes
+  									<div class="control level-right lil-side-margin">
+  										<label class="radio level-item">
+          									<input type="radio" name="under-21" value="Yes"/>&nbsp;Yes
         								</label>
-        								<label class="radio">
-          									<input type="radio" name="under21" value="No"/>No
+        								<label class="radio level-item">
+          									<input type="radio" name="under-21" value="No" checked/>&nbsp;No
         								</label>
+  									</div>
+								</div>
+								<div class="level">
+									<div class="level-left" style="visibility: hidden;">
+										<span class="level-item">Blank</span>
+									</div>
+  									<div class="control level-right lil-side-margin">
+										<span class="level-item" aria-haspopup="true" aria-controls="party-dropdown-menu">Close (Hover and Click)</button>
   									</div>
 								</div>
 							</div>

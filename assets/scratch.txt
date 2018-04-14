@@ -4,7 +4,7 @@
 <style> .main-img {background-image:none} </style>
 
 <!--template for all home pages-->
-<h2 class="is-size-2 has-text-weight-semibold">Vegas Nightlife Awaits!</h2>
+<h2 class="is-size-2 has-text-weight-semibold has-text-centered">Vegas Nightlife Awaits!</h2>
 <div id="page-name"style="visibility:hidden;">vegas</div>
 
 <img src="<?php echo get_template_directory_uri(); ?>/assets/images/icon-map.svg" alt="map icon" id='icon-pg-1'/> 

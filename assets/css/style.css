@@ -11,6 +11,8 @@ body {
 
 p {
     font-size: 1rem;
+    color: #FFFFFF;
+    font-family: 'Montserrat', sans-serif;
 }
 
 h2 {
@@ -53,12 +55,22 @@ h4 {
     padding: 0px;
 }
 
+.lil-pad {
+    padding: 13px;
+}
+
 .inline-block {
     display: inline-block;
 }
 
 .block {
     display: block;
+}
+
+.ow {
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  hyphens: auto;
 }
 
 
@@ -127,6 +139,23 @@ nav {
     margin-top: 50px;
 }
 /* END CONTENT */
+
+
+/* FORM */
+
+.flex-sa{
+    justify-content: space-around;
+}
+
+/*.counter-row{
+    align-items: center;
+}*/
+
+#count-women-display, #count-men-display{
+    width:13px;
+}
+
+/* END FORM */
 
 
 /* FOOTER */
