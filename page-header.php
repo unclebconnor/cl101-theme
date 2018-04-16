@@ -13,17 +13,17 @@
         		</a>
         	</div>
         	<div>
-        		<a href="<?php print get_permalink($post->post_parent); ?>about"> 
+        		<a href="<?php print get_permalink($post->post_parent); ?>about/"> 
         			About
         		</a>
         	</div>
         	<div>
-        		<a href="<?php print get_permalink($post->post_parent); ?>how-it-works">
+        		<a href="<?php print get_permalink($post->post_parent); ?>how-it-works/">
         			How It Works
         		</a>
         	</div>
         	<div>
-        		<a href="<?php print get_permalink($post->post_parent); ?>faqs">
+        		<a href="<?php print get_permalink($post->post_parent); ?>faqs/">
         			FAQ's
         		</a>
         	</div>

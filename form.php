@@ -16,7 +16,7 @@
 				<p>Trip Details</p>
 			</div>
 		</div>
-		<form action="form-to-email.php" class="column is-8 is-offset-2" id="contact-form" method="post" name="contact-form">
+		<form action="<?php echo get_template_directory_uri(); ?>/assets/process-form.php" class="column is-8 is-offset-2" id="contact-form" method="post" name="contact-form">
 			<div class="form-page" id="form-page-1">
 				<section id="form-destination">
 					<div class="field">
@@ -26,11 +26,12 @@
 									id="choose-a-city" 
 									aria-required="true" 
 									class="required" 
-									name="Choose a City" 
+									name="choose-a-city" 
 									title="Choose a City"
 									style="width:300px"
+									required
 								>
-									<option value="" disabled selected>Choose a City</option>
+									<option value="" disabled>Choose a City</option>
 									<option id="vegas" value="Vegas">Vegas</option>
 									<option id="miami" value="Miami">Miami</option>
 									<option id="new-york" value="New York">New York</option>
@@ -52,7 +53,10 @@
 			<div class="form-page" id="form-page-2" style="display: none;">
 				<section id="form-contact">
 					<div class="field">
-						<div class="control is-flex flex-sa">
+						<label><div id="pg-2-error" class="error-text"></div></label>
+					</div>
+					<div class="field">
+						<div class="control is-flex flex-sa has-icons-right">
 							<input 
 								aria-required="true" 
 								class="input required" 
@@ -61,8 +65,13 @@
 								placeholder="First Name" 
 								title="First Name" 
 								type="text" 
-								value="" 
+								value=""
+								autocomplete='given-name'
+								required 
 							/>
+							<span class="icon is-small is-right  is-invisible" id="name-warning-icon">
+      							<i class="fas fa-exclamation-circle warning " ></i>
+    						</span>
 						</div>
 					</div>
 					<div class="field">
@@ -75,36 +84,57 @@
 								title="Last Name" 
 								type="text" 
 								value=""
+								autocomplete='family-name'
 							/>
 						</div>
 					</div>
 					<div class="field">
-						<div class="control is-flex flex-sa">
+						<label><div id="phone-error" class="error-text"></div></label>
+					</div>
+					<div class="field">
+						<div class="control is-flex flex-sa has-icons-right">
 							<input 
 								aria-required="true" 
 								class="input required" 
+								validationMessage="Please enter valid"
 								id="phone" 
 								name="phone" 
 								placeholder="Phone Number" 
-								title="Phone Number" 
-								pattern="/^([\(]{1}[0-9]{3}[\)]{1}[\.| |\-]{0,1}|^[0-9]{3}[\.|\-| ]?)?[0-9]{3}(\.|\-| )?[0-9]{4}$/"
-								type="text" 
+								title="Phone Number: xxx-xxx-xxxx" 
+								type="tel"
+								pattern="^(\+\d{1,2}\s)?\(?\d{3}\)?[\s.-]?\d{3}[\s.-]?\d{4}$"
+								autocomplete='tel-national'
+								required 
 							/>
+    						<span class="icon is-small is-right  is-invisible" id="phone-warning-icon">
+      							<i class="fas fa-exclamation-circle warning " ></i>
+    						</span>
 						</div>
 					</div>
-					<div class="control is-flex flex-sa">
-						<input 
-							aria-required="true" 
-							class="input required" 
-							id="email" 
-							name="email" 
-							placeholder="Email Address" 
-							title="Email Address" 
-							type="email" 
-							pattern=".+@.+\..+"
-							value=""
-						/>
+					<div class="field">
+						<label><div id="email-error" class="error-text"></div></label>
 					</div>
+					<div class="field">
+						<div class="control is-flex flex-sa has-icons-right">
+							<input 
+								aria-required="true" 
+								class="input required" 
+								id="email" 
+								name="email" 
+								placeholder="Email Address" 
+								title="Email Address: example@email.com" 
+								type="email" 
+								pattern=".+@.+\..+"
+								value=""
+								autocomplete='email'
+								required
+							/>
+							<span class="icon is-small is-right  is-invisible" id="email-warning-icon">
+      							<i class="fas fa-exclamation-circle warning " ></i>
+    						</span>
+						</div>
+					</div>
+					
 					<div class="field is-flex flex-sa">
 						<div class="control">
 							<button 
@@ -124,30 +154,40 @@
 			<div class="form-page" id="form-page-3" style="display: none;">
 				<section id="form-details">
 					<div class="field">
-						<div class="control is-flex flex-sa">
+						<label><div id="pg-3-error" class="error-text"></div></label>
+					</div>
+					<div class="field">
+						<div class="control is-flex flex-sa has-icons-right">
 							<input 
 								class="input validate-date" 
 								id="arrival-date" 
 								name="arrival-date" 
 								placeholder="Arrival Date" 
-								title="Arrival Date" 
+								title="Arrival Date: mm/dd/yyyy" 
 								type="text"
 								pattern="[0-9]{1,2}/[0-9]{1,2}/[0-9]{4}|[0-9]{2}" 
+								required
 							/>
+							<span class="icon is-small is-right  is-invisible" id="arrival-warning-icon">
+      							<i class="fas fa-exclamation-circle warning " ></i>
+    						</span>
 						</div>
 					</div>
 					<div class="field">
-						<div class="control is-flex flex-sa">
+						<div class="control is-flex flex-sa has-icons-right">
 							<input 
 								class="input validate-date" 
 								id="departure-date" 
 								name="departure-date" 
 								placeholder="Departure Date" 
-								title="Departure Date" 
+								title="Departure Date: mm/dd/yyyy" 
 								type="text"
-								pattern="[0-9]{1,2}/[0-9]{1,2}/[0-9]{4}|[0-9]{2}" 
+								pattern="[0-9]{1,2}/[0-9]{1,2}/[0-9]{4}|[0-9]{2}"
+								required 
 							/>
-
+							<span class="icon is-small is-right  is-invisible" id="departure-warning-icon">
+      							<i class="fas fa-exclamation-circle warning " ></i>
+    						</span>
 						</div>
 					</div>
 					<div class="dropdown is-flex flex-sa field" >
@@ -237,17 +277,17 @@
 					</div>
 					<div class="field">
 						<div class="control">
+								<input id="redirect-url" name="redirect-url" title="redirect-url" type="hidden" value="<?php print get_permalink($post->post_parent); ?>about/"/>
 							<button 
     							class="button is-link to-pg-2"
     							type="button" 
     						>Previous</button>
-							<button class="button is-link" id="submit-button" type="submit" value="submit" name='submit'>Submit</button>
+							<button class="button is-link" id="submit-button" type="submit" value="submit" name='submit-button'>Submit</button>
 						</div>
 						
 					</div>
 				</section>
 			</div>
-			
 		</form>
 	</div>
 </div>

@@ -147,13 +147,19 @@ nav {
     justify-content: space-around;
 }
 
-/*.counter-row{
-    align-items: center;
-}*/
+.error-text {
+    color: red;
+}
 
 #count-women-display, #count-men-display{
     width:13px;
 }
+
+.warning{
+    color: red;
+}
+
+
 
 /* END FORM */
 

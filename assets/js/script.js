@@ -24,11 +24,82 @@
 	var toPg2 = $('.to-pg-2');
 	var toPg3 = $('.to-pg-3');
 	var pageName= $('#page-name').text();
+	var pg2Error = $('#pg-2-error');
+	var pg3Error = $('#pg-3-error');
+	var firstName = $('#first-name')[0];
+	var nameWarningIcon = $('#name-warning-icon');
+	var phone = $('#phone')[0];
+	var phoneWarningIcon = $('#phone-warning-icon');
+	var email = $('#email')[0];
+	var emailWarningIcon = $('#email-warning-icon');
+	var arrivalDate = $('#arrival-date')[0];
+	var arrivalWarningIcon = $('#arrival-warning-icon');
+	var departureDate = $('#departure-date')[0];
+	var departureWarningIcon = $('#departure-warning-icon');
+	var submitButton = $('#submit-button');
+	let form = $("form[name='contact-form']");
 
 	
 	(function(){
 		$('#choose-a-city').find($('#' + pageName)).attr('selected','selected');
 	})()
+
+	var validatePg2 = function(){
+		//jquery doesn't like checkValidity()...shrugs
+		let validCount=0;
+    	
+    	if (!firstName.checkValidity()) {
+    		console.log(pg2Error);
+        	pg2Error.innerHTML = "Please Enter Required Fields";
+        	nameWarningIcon.toggleClass('is-invisible');
+    	} else {
+    		pg2Error.innerHTML = "";
+    		validCount +=1;
+    	}
+
+    	if (!phone.checkValidity()){
+    		pg2Error.html("Please Enter Required Fields");
+    		phoneWarningIcon.toggleClass('is-invisible');
+    	} else {
+    		pg2Error.innerHTML = "";
+    		validCount +=1;
+    	} 
+
+    	if (!email.checkValidity()){
+    		pg2Error.innerHTML = "Please Enter Required Fields";
+			emailWarningIcon.toggleClass('is-invisible');
+    	} else {
+    		pg2Error.innerHTML = "";
+    		validCount +=1;
+    	}
+
+    	if(validCount==3){return true;}
+    	else {return false;}
+	}
+
+	var validatePg3 = function(){
+		//jquery doesn't like checkValidity()...shrugs
+		let validCount=0;
+    	
+    	if (!arrivalDate.checkValidity()) {
+        	pg3Error.innerHTML = "Please Enter Required Fields";
+        	arrivalWarningIcon.toggleClass('is-invisible');
+    	} else {
+    		pg3Error.innerHTML = "";
+    		validCount +=1;
+    	}
+
+    	if (!departureDate.checkValidity()){
+    		pg3Error.html("Please Enter Required Fields");
+    		departureWarningIcon.toggleClass('is-invisible');
+    	} else {
+    		pg3Error.innerHTML = "";
+    		validCount +=1;
+    	} 
+
+    	if(validCount==2){return true;}
+    	else {return false;}
+	}
 
 
 	var goToPg1 = function(){
@@ -58,7 +129,7 @@
 		iconPg3.css('opacity',1.0);
 	}
 
-	goToPg1();
+	goToPg1(); //defaults to Pg1 on landing
 
 
 	var updateCounts = function(){
@@ -70,9 +141,16 @@
 		countTotalDisp.text(calcTotal);
 	}
 
+	//go to pages based on clicks
 	toPg1.click(function(){goToPg1();});
 	toPg2.click(function(){goToPg2();});
-	toPg3.click(function(){goToPg3();});
+	toPg3.click(function(){if(validatePg2()){goToPg3();}});
+	submitButton.click(function(e){
+		e.preventDefault();
+		if(validatePg3()){
+			$("form[name='contact-form']").submit();
+		}
+	})
 
 
 	//increase count of men
