@@ -2,7 +2,14 @@
 
 <?php get_header(); ?>
 
-<?php get_template_part('page-header'); ?>
+<header class="level is-mobile">
+    <!-- <div class="columns"> -->
+        <div class="level-left">
+            <a class="level-item" href="<?php print home_url(); ?>">
+                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/logo.jpg" alt="Clubbing 101 Logo" id="logo-image"/></span>   
+            </a>
+        </div>      
+</header>
 
 <div class="page-content main-img"> <!-- Begin Content Container - Closed in Footer-->
     <div class="parallax-window">
@@ -24,10 +31,10 @@
                         </div>
                         <div class="dropdown-menu has-text-centered full-wide" id="dropdown-menu" role="menu">
                             <div class="dropdown-content">
-                                <a class="dropdown-item" href="<?php print home_url(); ?>/vegas">Vegas</a>
-                                <a class="dropdown-item" href="<?php print home_url(); ?>/miami">Miami</a>
-                                <a class="dropdown-item" href="<?php print home_url(); ?>/new-york">New York</a>
-                                <a class="dropdown-item" href="<?php print home_url(); ?>/los-angeles">Los Angeles</a>
+                                <a class="dropdown-item" href="<?php print home_url(); ?>/vegas/">Vegas</a>
+                                <a class="dropdown-item" href="<?php print home_url(); ?>/miami/">Miami</a>
+                                <a class="dropdown-item" href="<?php print home_url(); ?>/new-york/">New York</a>
+                                <a class="dropdown-item" href="<?php print home_url(); ?>/los-angeles/">Los Angeles</a>
                             </div>
                         </div>
                     </div>

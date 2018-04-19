@@ -3,10 +3,6 @@
 
     
         <footer class="copyright center">
-            <p class="copyright">
-                © 2016
-                <a href="<?php print home_url(); ?>" title="Clubbing101" rel="home">Clubbing 101</a>
-            </p>
             <div class="social-links">
                 <a href="https://www.facebook.com/clubbing101/">
                     <i class="fab fa-facebook"></i>
@@ -23,7 +19,7 @@
                 </a>
             </div>
             <p class="copyright">
-                All the featured websites are the intellectual property of the rightful owners.
+                Copyright © 2018 Clubbing101 - All Rights Reserved.
             </p>
         </footer>
         <?php wp_footer(); ?>

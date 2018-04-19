@@ -1,7 +1,7 @@
 <?php get_header(); ?>
 
 	<div class="columns">
-		<div class="column is-8">
+		<div class="column is-8 is-mobile">
 				
 			<?php 
 				if ( have_posts() ) : while ( have_posts() ) : the_post();

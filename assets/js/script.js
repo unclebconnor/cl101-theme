@@ -1,6 +1,8 @@
 (function( $ ) {
+	var hamburgerDrop = $('#hamburger-button')
 	var lpDrop = $('#lp-dropdown');
 	var formCountDrop = $('#form-count-dropdown');
+	var formClose = $('#form-close');
 	var cmUp = $('#cm-up');
 	var cmDn = $('#cm-dn');
 	var cwUp = $('#cw-up');
@@ -129,7 +131,7 @@
 		iconPg3.css('opacity',1.0);
 	}
 
-	goToPg1(); //defaults to Pg1 on landing
+	goToPg2(); //defaults to Pg2 on landing
 
 
 	var updateCounts = function(){
@@ -202,6 +204,10 @@
     });
 
 	//dropdown menus
+	hamburgerDrop.on('click', function(){
+		hamburgerDrop.parent().toggleClass('is-active');
+	});
+
 	lpDrop.on('click', function(){
 		lpDrop.toggleClass('is-active');
 	});
@@ -211,19 +217,26 @@
 		formCountDrop.parent().toggleClass('is-active');
 	});
 
+	formClose.on('click', function(e){
+		e.preventDefault();
+		formCountDrop.parent().toggleClass('is-active');
+	}); 
+
 	//datepicker settings
 	const arrDate = datepicker('#arrival-date',{
 		minDate: new Date(),
 		formatter: function(el, date) {
     		el.value = date.toLocaleDateString();
-  		}
+  		},
+  		disableMobile: true
 	});
 
 	const depDate = datepicker('#departure-date',{
 		minDate: new Date(),
 		formatter: function(el, date) {
     		el.value = date.toLocaleDateString();
-  		}
+  		},
+  		disableMobile: true
 	});
 
 }) (jQuery);

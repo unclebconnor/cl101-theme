@@ -1,7 +1,7 @@
 
 <div class="contact-form-container">
 	<div class='' id="contact-form">
-		<div class="flex-sa is-flex">
+		<div class="flex-sa is-flex" id="icon-row">
 			<!-- breadcrumb images -->
 			<div class='icon-group has-text-centered is-link to-pg-1' id='icon-pg-1'>
 				<img src="<?php echo get_template_directory_uri(); ?>/assets/images/icon-map.svg" alt="map icon" />
@@ -41,9 +41,9 @@
 						</div>
 					</div>
 					<div class="field">
-						<div class="control is-flex flex-sa">
+						<div class="control is-flex flex-sa space-around">
     						<button 
-    							class="button is-link to-pg-2"
+    							class="button is-link to-pg-2 form-nav"
     							type="button" 
     						>Next</button>
   						</div>
@@ -53,7 +53,7 @@
 			<div class="form-page" id="form-page-2" style="display: none;">
 				<section id="form-contact">
 					<div class="field">
-						<label><div id="pg-2-error" class="error-text"></div></label>
+						<label><div id="pg-2-error" style="color:#9e1726;"></div></label>
 					</div>
 					<div class="field">
 						<div class="control is-flex flex-sa has-icons-right">
@@ -70,7 +70,7 @@
 								required 
 							/>
 							<span class="icon is-small is-right  is-invisible" id="name-warning-icon">
-      							<i class="fas fa-exclamation-circle warning " ></i>
+      							<i class="fas fa-exclamation-circle" style="color:#9e1726;"></i>
     						</span>
 						</div>
 					</div>
@@ -107,7 +107,7 @@
 								required 
 							/>
     						<span class="icon is-small is-right  is-invisible" id="phone-warning-icon">
-      							<i class="fas fa-exclamation-circle warning " ></i>
+      							<i class="fas fa-exclamation-circle" style="color:#9e1726;"></i>
     						</span>
 						</div>
 					</div>
@@ -130,21 +130,21 @@
 								required
 							/>
 							<span class="icon is-small is-right  is-invisible" id="email-warning-icon">
-      							<i class="fas fa-exclamation-circle warning " ></i>
+      							<i class="fas fa-exclamation-circle" style="color:#9e1726;"></i>
     						</span>
 						</div>
 					</div>
 					
-					<div class="field is-flex flex-sa">
-						<div class="control">
+					<div class="field is-flex flex-sa space-around ">
+						<div class="control ">
 							<button 
-    							class="button is-link to-pg-1"
+    							class="button is-link to-pg-1 form-nav"
     							type="button" 
     						>Previous</button>
     					</div>
     					<div class="control">
     						<button 
-    							class="button is-link to-pg-3"
+    							class="button is-link to-pg-3 form-nav"
     							type="button" 
     						>Next</button>
   						</div>
@@ -154,7 +154,7 @@
 			<div class="form-page" id="form-page-3" style="display: none;">
 				<section id="form-details">
 					<div class="field">
-						<label><div id="pg-3-error" class="error-text"></div></label>
+						<label><div id="pg-3-error" style="color:#9e1726;"></div></label>
 					</div>
 					<div class="field">
 						<div class="control is-flex flex-sa has-icons-right">
@@ -164,12 +164,12 @@
 								name="arrival-date" 
 								placeholder="Arrival Date" 
 								title="Arrival Date: mm/dd/yyyy" 
-								type="text"
+								type="date"
 								pattern="[0-9]{1,2}/[0-9]{1,2}/[0-9]{4}|[0-9]{2}" 
 								required
 							/>
 							<span class="icon is-small is-right  is-invisible" id="arrival-warning-icon">
-      							<i class="fas fa-exclamation-circle warning " ></i>
+      							<i class="fas fa-exclamation-circle" style="color:#9e1726;"></i>
     						</span>
 						</div>
 					</div>
@@ -181,18 +181,18 @@
 								name="departure-date" 
 								placeholder="Departure Date" 
 								title="Departure Date: mm/dd/yyyy" 
-								type="text"
+								type="date"
 								pattern="[0-9]{1,2}/[0-9]{1,2}/[0-9]{4}|[0-9]{2}"
 								required 
 							/>
 							<span class="icon is-small is-right  is-invisible" id="departure-warning-icon">
-      							<i class="fas fa-exclamation-circle warning " ></i>
+      							<i class="fas fa-exclamation-circle" style="color:#9e1726;"></i>
     						</span>
 						</div>
 					</div>
 					<div class="dropdown is-flex flex-sa field" >
 						<div class="dropdown-trigger full-wide" id="form-count-dropdown">
-							<button class="button full-wide level" aria-haspopup="true" aria-controls="party-dropdown-menu">
+							<button class="button full-wide level is-mobile" aria-haspopup="true" aria-controls="party-dropdown-menu">
 								<div class="level-left">
 									<span class="level-item">Group Size:</span>
       								<span class="level-item" id="count-total-display">0</span>
@@ -218,28 +218,28 @@
 										<input id="count-total" name="count-total" title="Total" type="hidden" value="0"/>
 									</div>
 								</div>
-								<div id="count-men-row" class="level">
+								<div id="count-men-row" class="level is-mobile">
 									<div class="level-left">
 										<div class="level-item lil-side-margin">Men</div>
 									</div>
 									<div class="level-right lil-side-margin">
-										<span class="center level-item" id="cm-dn"><i class=" fas fa-minus-circle"></i></span>
+										<span class="center level-item" id="cm-dn"><i class=" fas fa-minus-circle" style="color:#9e1726;"></i></span>
 										<span class="center level-item" id="count-men-display" class="column is-2" unselectable="on">0</span>
-										<span class="center level-item" id="cm-up"><i class="fas fa-plus-circle"></i></span>
+										<span class="center level-item" id="cm-up"><i class="fas fa-plus-circle" style="color:#9e1726;"></i></span>
 									</div>
 								</div>
-								<div id="count-women-row" class="level">
+								<div id="count-women-row" class="level is-mobile">
 									<div class="level-left">
 										<div class="level-item lil-side-margin">Women</div>
 									</div>
 									<div class="level-right lil-side-margin">
-										<span class="center level-item" id="cw-dn"><i class="fas fa-minus-circle"></i></span>
+										<span class="center level-item" id="cw-dn"><i class="fas fa-minus-circle" style="color:#9e1726;"></i></span>
 										<span class="center level-item" id="count-women-display" class="column is-2" unselectable="on">0</span>
-										<span class="center level-item" id="cw-up"><i class="fas fa-plus-circle"></i></span>
+										<span class="center level-item" id="cw-up"><i class="fas fa-plus-circle" style="color:#9e1726;"></i></span>
 									</div>
 									
 								</div>
-								<div class="field is-horizontal level">
+								<div class="field is-horizontal level is-mobile">
 									<div class="level-left">
     									<span class="level-item lil-side-margin">Is anyone under 21?</span>
   									</div>
@@ -252,12 +252,12 @@
         								</label>
   									</div>
 								</div>
-								<div class="level">
+								<div class="level is-mobile">
 									<div class="level-left" style="visibility: hidden;">
 										<span class="level-item">Blank</span>
 									</div>
   									<div class="control level-right lil-side-margin">
-										<span class="level-item" aria-haspopup="true" aria-controls="party-dropdown-menu">Close (Hover and Click)</button>
+										<button id="form-close" class="level-item button is-text" aria-haspopup="true" aria-controls="party-dropdown-menu">Close</button>
   									</div>
 								</div>
 							</div>
@@ -274,15 +274,20 @@
 								type="text" 
 							/>
 						</div>
+						<div class="control is-invisible">
+							<input id="redirect-url" name="redirect-url" title="redirect-url" type="hidden" value="<?php print get_permalink($post->post_parent); ?>form-confirmation/"/>
+						</div>
 					</div>
-					<div class="field">
+					<div class="field is-flex flex-sa">
+						
 						<div class="control">
-								<input id="redirect-url" name="redirect-url" title="redirect-url" type="hidden" value="<?php print get_permalink($post->post_parent); ?>about/"/>
 							<button 
-    							class="button is-link to-pg-2"
+    							class="button is-link to-pg-2 form-nav"
     							type="button" 
     						>Previous</button>
-							<button class="button is-link" id="submit-button" type="submit" value="submit" name='submit-button'>Submit</button>
+    					</div>
+    					<div class="control">
+							<button class="button is-link form-nav" id="submit-button" type="submit" value="submit" name='submit-button'>Submit</button>
 						</div>
 						
 					</div>

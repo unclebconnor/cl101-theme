@@ -1,6 +1,6 @@
 html, body {
     margin: 0px;
-    background-color: black;
+    background-color: #000000 !important;
     font-family: 'Montserrat', sans-serif;
 }
 
@@ -78,9 +78,7 @@ h4 {
 
 
 /* HEADER */
-a:hover {
-    text-decoration:none;
-}
+
 
 header {
     position: fixed;
@@ -130,13 +128,36 @@ nav {
     font-weight: 500; 
 }
 
+.hamburger-button, .menu-dropdown-wrapper {
+    background-color: #000000 !important;
+    border: none !important;
+}
+
+.hamburger-button svg {
+    color: white;
+}
+
+.menu-dropdown-wrapper a {
+    color: white;
+}
+
+.menu-item a:hover{
+    color: white;
+    text-decoration: underline !important;
+}
+
+.menu-item:hover {
+    color: white;
+    text-decoration: underline !important;
+}
+
 
 /* END HEADER */
 
 
 /* CONTENT */
-.content-area {
-    margin-top: 50px;
+.page-content {
+    margin-top: 70px;
 }
 /* END CONTENT */
 
@@ -159,6 +180,27 @@ nav {
     color: red;
 }
 
+#icon-row, .icon-group{
+    align-items: flex-end;
+}
+
+.icon-group :hover{
+    opacity: 0.5;
+    cursor: pointer;
+}
+
+.form-nav {
+    width:120px;
+    background-color: #9e1726 !important;
+}
+
+.form-nav:hover {
+    background-color: #8e1924 !important;
+}
+
+
+
+
 
 
 /* END FORM */
@@ -172,7 +214,7 @@ footer {
 footer.copyright {
     text-align:center;
     background: black;
-    padding: 40px 80px 30px 80px;
+    padding: 20px 0 20px 0;
     color: white;
     height: 130px;
 }
@@ -192,7 +234,7 @@ footer.copyright {
 
 /* BACKGROUND IMAGE STUFF */
 .main-img{
-    background-image: url("http://localhost:8888/clubbing101/wp-content/uploads/2018/03/Las-Vegas-Night.jpg");
+    background-image: url("../images/city-vegas.jpg");
     height: 100%; 
     background-attachment: fixed;
     background-position: top;
