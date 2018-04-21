@@ -84,7 +84,7 @@ header {
     position: fixed;
     height: 70px;
     width: 100%;
-    background-color: #181303;
+    background-color: #000000;
     color: white;
     top: 0px;
     margin-bottom:0px;
@@ -176,6 +176,10 @@ nav {
     width:13px;
 }
 
+#party-dropdown-menu{
+    padding: 0 13px 0 13px;
+}
+
 .warning{
     color: red;
 }
@@ -187,6 +191,16 @@ nav {
 .icon-group :hover{
     opacity: 0.5;
     cursor: pointer;
+}
+
+@media (max-width: 768px){
+    .icon-group {
+        padding: 10px;
+    }
+
+    .icon-group p {
+        font-size: 0.75rem;
+    }
 }
 
 .form-nav {

@@ -21,7 +21,7 @@
                 </div>
             </div>
             <div class="columns">
-                <div class="column is-6 is-offset-3">
+                <div class="column is-4 is-offset-4">
                     <div id="lp-dropdown" class="no-pad dropdown  has-text-centered full-wide">
                         <div class="dropdown-trigger has-text-centered full-wide">
                             <button class="button has-text-centered full-wide " aria-haspopup="true" aria-controls="dropdown-menu">

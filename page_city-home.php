@@ -8,11 +8,13 @@
     <div class="container content-area parallax-window">
         <div class="columns">
             <div class="column is-8 is-offset-2 is-10-mobile is-offset-1-mobile"> 
-                <?php 
-                    if ( have_posts() ) : while ( have_posts() ) : the_post();
-                    get_template_part( 'page-content', get_post_format() );
-                    endwhile; endif; 
-                ?>
+                <div style="margin:40px 0 10px 0">
+                    <?php 
+                        if ( have_posts() ) : while ( have_posts() ) : the_post();
+                        get_template_part( 'page-content', get_post_format() );
+                        endwhile; endif; 
+                    ?>
+                </div>
                 <?php get_template_part('form'); ?>
             </div> 
         </div> <!-- /.row -->
