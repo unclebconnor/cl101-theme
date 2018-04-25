@@ -49,34 +49,37 @@
 	var validatePg2 = function(){
 		//jquery doesn't like checkValidity()...shrugs
 		let validCount=0;
+		nameWarningIcon.addClass('is-invisible');
+		phoneWarningIcon.addClass('is-invisible');
+		emailWarningIcon.addClass('is-invisible');
+		pg2Error.empty();
     	
     	if (!firstName.checkValidity()) {
-    		console.log(pg2Error);
-        	pg2Error.innerHTML = "Please Enter Required Fields";
-        	nameWarningIcon.toggleClass('is-invisible');
+        	nameWarningIcon.removeClass('is-invisible');
     	} else {
-    		pg2Error.innerHTML = "";
     		validCount +=1;
     	}
 
     	if (!phone.checkValidity()){
-    		pg2Error.html("Please Enter Required Fields");
-    		phoneWarningIcon.toggleClass('is-invisible');
+    		phoneWarningIcon.removeClass('is-invisible');
     	} else {
-    		pg2Error.innerHTML = "";
     		validCount +=1;
     	} 
 
     	if (!email.checkValidity()){
-    		pg2Error.innerHTML = "Please Enter Required Fields";
-			emailWarningIcon.toggleClass('is-invisible');
+			emailWarningIcon.removeClass('is-invisible');
     	} else {
-    		pg2Error.innerHTML = "";
     		validCount +=1;
     	}
 
-    	if(validCount==3){return true;}
-    	else {return false;}
+    	if(validCount==3){
+    		pg2Error.empty();
+    		return true;
+    	}
+    	else {
+    		pg2Error.html("Please Enter Required Fields");
+    		return false;
+    	}
 	}
 
 	var validatePg3 = function(){
