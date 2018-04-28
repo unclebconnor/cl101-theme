@@ -5,15 +5,15 @@
 			<!-- breadcrumb images -->
 			<div class='icon-group has-text-centered is-link to-pg-1' id='icon-pg-1'>
 				<img src="<?php echo get_template_directory_uri(); ?>/assets/images/icon-map.svg" alt="map icon" />
-				<p>Destination</p>
+				<h5>Destination</h5>
 			</div>
 			<div class='icon-group has-text-centered is-link to-pg-2' id='icon-pg-2'>
 				<img src="<?php echo get_template_directory_uri(); ?>/assets/images/icon-contact.svg" alt="contact icon" style="padding-right: 39px;"/>
-				<p>Contact Info</p>
+				<h5>Contact Info</h5>
 			</div>
 			<div class='icon-group has-text-centered is-link to-pg-3' id='icon-pg-3'>
 				<img src="<?php echo get_template_directory_uri(); ?>/assets/images/icon-trip-details.svg" alt="trip details icon" />
-				<p>Trip Details</p>
+				<h5>Trip Details</h5>
 			</div>
 		</div>
 		<form action="<?php echo get_template_directory_uri(); ?>/assets/process-form.php" class="column is-8 is-offset-2" id="contact-form" method="post" name="contact-form">
@@ -55,7 +55,7 @@
 			<div class="form-page" id="form-page-2" style="display: none;">
 				<section id="form-contact">
 					<div class="field">
-						<label><div id="pg-2-error" style="color:#9e1726;"></div></label>
+						<label><div id="pg-2-error" ></div></label>
 					</div>
 					<div class="columns is-multiline">
 						<div class="field column is-6">
@@ -70,7 +70,9 @@
 									type="text" 
 									value=""
 									autocomplete='given-name'
-									required 
+									required
+									tabindex="1" 
+									autofocus
 								/>
 								<span class="icon is-small is-right  is-invisible" id="name-warning-icon">
       								<i class="fas fa-exclamation-circle" style="color:#9e1726;"></i>
@@ -88,6 +90,7 @@
 									type="text" 
 									value=""
 									autocomplete='family-name'
+									tabindex="2"
 								/>
 							</div>
 						</div>
@@ -104,7 +107,8 @@
 									type="tel"
 									pattern="^(\+\d{1,2}\s)?\(?\d{3}\)?[\s.-]?\d{3}[\s.-]?\d{4}$"
 									autocomplete='tel-national'
-									required 
+									required
+									tabindex="3"
 								/>
 	    						<span class="icon is-small is-right  is-invisible" id="phone-warning-icon">
 	      							<i class="fas fa-exclamation-circle" style="color:#9e1726;"></i>
@@ -125,6 +129,7 @@
 									value=""
 									autocomplete='email'
 									required
+									tabindex="4"
 								/>
 								<span class="icon is-small is-right  is-invisible" id="email-warning-icon">
 	      							<i class="fas fa-exclamation-circle" style="color:#9e1726;"></i>
@@ -132,28 +137,28 @@
 							</div>
 						</div>
 					</div>
-					<div class="field is-flex flex-sa space-around ">
+					<div class="field is-flex flex-sa ">
+						<div class="control ">
+							<button 
+    							class="button is-link to-pg-1 form-nav-small"
+    							type="button"
+    							tabIndex="-1" 
+    						><i class="fas fa-arrow-left"></i></button>
+    					</div>
     					<div class="control">
     						<button 
     							class="button is-link to-pg-3 form-nav"
-    							type="button" 
+    							type="button"
+    							tabindex="5" 
     						>Next</button>
   						</div>
 					</div>
-					<div class="field is-flex flex-sa space-around ">
-						<div class="control ">
-							<button 
-    							class="button is-text to-pg-1"
-    							type="button" 
-    						><i class="fas fa-arrow-left"></i>&nbsp;Change City</button>
-    					</div>
-					</div>
 				</section>
 			</div>
-			<div class="form-page" id="form-page-3" style="display: none;">
+			<div class="form-page" id="form-page-3">
 				<section id="form-details">
 					<div class="field">
-						<label><div id="pg-3-error" style="color:#9e1726;"></div></label>
+						<label><div id="pg-3-error"></div></label>
 					</div>
 					<div class="columns is-multiline">
 						<div class="field column is-6">
@@ -167,6 +172,7 @@
 									type="text"
 									pattern="[0-9]{1,2}/[0-9]{1,2}/[0-9]{4}|[0-9]{2}" 
 									required
+									tabindex="6"
 								/>
 								<span class="icon is-small is-right  is-invisible" id="arrival-warning-icon">
       								<i class="fas fa-exclamation-circle" style="color:#9e1726;"></i>
@@ -183,7 +189,8 @@
 									title="Departure Date: mm/dd/yyyy" 
 									type="text"
 									pattern="[0-9]{1,2}/[0-9]{1,2}/[0-9]{4}|[0-9]{2}"
-									required 
+									required
+									tabindex="7" 
 								/>
 								<span class="icon is-small is-right  is-invisible" id="departure-warning-icon">
       								<i class="fas fa-exclamation-circle" style="color:#9e1726;"></i>
@@ -191,7 +198,7 @@
 							</div>
 						</div>
 						<div class="dropdown is-flex flex-sa field column is-12" >
-							<div class="dropdown-trigger full-wide" id="form-count-dropdown">
+							<div class="dropdown-trigger full-wide" id="form-count-dropdown" tabindex="8">
 								<button class="button full-wide level is-mobile" aria-haspopup="true" aria-controls="party-dropdown-menu">
 									<div class="level-left">
 										<span class="level-item">Group Size:</span>
@@ -199,7 +206,7 @@
 									</div>
 									<div class="level-right">
 										<span class="icon is-small level-item">
-        									<i class="fas fa-angle-down" aria-hidden="true"></i>
+        									<i class="caret fas fa-angle-down" aria-hidden="true"></i>
       									</span>
 									</div>
       								
@@ -255,7 +262,7 @@
 										<div class="level-left" style="visibility: hidden;">
 											<span class="level-item">Blank</span>
 										</div>
-  										<div class="control level-right lil-side-margin">
+  										<div class="control level-right">
 											<button id="form-close" class="level-item button is-text" aria-haspopup="true" aria-controls="party-dropdown-menu">Close</button>
   										</div>
 									</div>
@@ -270,7 +277,8 @@
 									name="occasion" 
 									placeholder="What is the occasion?  (E.g. Birthday, Wedding" 
 									title="occasion" 
-									type="text" 
+									type="text"
+									tabindex="9" 
 								/>
 							</div>
 							<div class="control is-invisible">
@@ -278,18 +286,24 @@
 							</div>
 						</div>
 					</div>
-					<div class="field is-flex flex-sa">
-    					<div class="control">
-							<button class="button is-link form-nav" id="submit-button" type="submit" value="submit" name='submit-button'>Submit</button>
-						</div>
-					</div>
-					<div class="field is-flex flex-sa">
-						<div class="control">
+					<div class="field is-flex flex-sa lil-bottom-margin">
+						<div class="control ">
 							<button 
-    							class="button is-text to-pg-2"
-    							type="button" 
-    						><i class="fas fa-arrow-left"></i>&nbsp;Contact Info</button>
+    							class="button is-link to-pg-2 form-nav-small"
+    							type="button"
+    							tabIndex="-1"  
+    						><i class="fas fa-arrow-left"></i></button>
     					</div>
+    					<div class="control">
+							<button 
+								class="button is-link form-nav" 
+								id="submit-button" 
+								type="submit" 
+								value="submit" 
+								name='submit-button'
+								tabindex="10"
+							>Submit</button>
+						</div>
 					</div>
 				</section>
 			</div>

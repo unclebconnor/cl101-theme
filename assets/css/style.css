@@ -11,25 +11,56 @@ body {
 
 p {
     font-size: 1rem;
-    color: #FFFFFF;
+    color: darkgray;
     font-family: 'Montserrat', sans-serif;
+    margin-bottom:13px !important;
 }
 
 h2 {
     margin: 20px;
-    color: #FFFFFF;
+    color: #FFFFFF !important;
     font-family: 'Montserrat', sans-serif;
     font-weight: 600;
 }
 
+h3 {
+    margin: 15px;
+    color: #FFFFFF !important;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+}
+
 h4 {
     margin: 10px;
-    color: #FFFFFF;
+    color: #FFFFFF !important;
+    font-family: 'Montserrat', sans-serif;
+}
+
+h5 {
+    font-size: 1rem;
+    color: #FFFFFF !important;
     font-family: 'Montserrat', sans-serif;
 }
 
 .trigger-text{
     color: #BBBBBB;
+}
+
+.caret{
+    color: #BBBBBB;
+    /* Firefox */
+    -moz-transition: 500ms linear all;
+    /* WebKit */
+    -webkit-transition: 500ms linear all;
+    /* Opera */
+    -o-transition: 500ms linear all;
+    /* Standard */
+    transition: 500ms linear all;
+}
+
+/*For caret on click*/
+svg.upside-down  {
+    transform: rotate(-180deg);
 }
 
 .dest-menu-back {
@@ -49,6 +80,10 @@ h4 {
 
 .lil-side-margin {
     margin: 0 10px 0 10px;
+}
+
+.lil-bottom-margin {
+    margin-bottom: 1rem !important;
 }
 
 .no-pad {
@@ -73,13 +108,17 @@ h4 {
   hyphens: auto;
 }
 
+.valign-center{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 
 /* END HELPERS */
 
 
 /* HEADER */
-
-
 header {
     position: fixed;
     height: 70px;
@@ -151,8 +190,6 @@ nav {
     color: white;
     text-decoration: underline !important;
 }
-
-
 /* END HEADER */
 
 
@@ -165,12 +202,22 @@ nav {
 
 /* FORM */
 
+.form-area{
+    min-height: 450px;
+}
+
 .flex-sa{
     justify-content: space-around;
 }
 
 .error-text {
     color: red;
+}
+
+#pg-2-error, #pg-3-error{
+    color:#9e1726;
+    background-color: rgba(255,255,255,0.4);
+    border-radius: 5px;
 }
 
 #count-women-display, #count-men-display{
@@ -204,19 +251,23 @@ nav {
     }
 }
 
+
+.form-nav-small {
+    background-color: #9e1726 !important;
+}
+
+.form-nav-small:hover {
+    background-color: #8e1924 !important;
+}
+
 .form-nav {
-    width:120px;
+    width:180px;
     background-color: #9e1726 !important;
 }
 
 .form-nav:hover {
     background-color: #8e1924 !important;
 }
-
-
-
-
-
 
 /* END FORM */
 
@@ -257,9 +308,9 @@ footer.copyright {
     /*background-size: cover;*/
 }
 
-.parallax-window {
+/*.parallax-window {
     height: 550px;
-}
+}*/
 
 /* END BACKGROUND IMAGE STUFF */
 

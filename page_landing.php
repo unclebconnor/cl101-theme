@@ -25,8 +25,8 @@
                     <div id="lp-dropdown" class="no-pad dropdown  has-text-centered full-wide">
                         <div class="dropdown-trigger has-text-centered full-wide">
                             <button class="button has-text-centered full-wide " aria-haspopup="true" aria-controls="dropdown-menu">
-                                <span><i class="fas fa-search trigger-text" aria-hidden="true"></i></span>
                                 <span class="trigger-text lil-side-margin">What is your destination?</span>
+                                <span><i class="trigger-text lil-side-margin caret fas fa-angle-down"></i></span>
                             </button>
                         </div>
                         <div class="dropdown-menu has-text-centered full-wide" id="dropdown-menu" role="menu">

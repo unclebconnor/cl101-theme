@@ -34,9 +34,9 @@
 	var phoneWarningIcon = $('#phone-warning-icon');
 	var email = $('#email')[0];
 	var emailWarningIcon = $('#email-warning-icon');
-	var arrivalDate = $('#arrival-date')[0];
+	var arrivalDate = $('#arrival-date');
 	var arrivalWarningIcon = $('#arrival-warning-icon');
-	var departureDate = $('#departure-date')[0];
+	var departureDate = $('#departure-date');
 	var departureWarningIcon = $('#departure-warning-icon');
 	var submitButton = $('#submit-button');
 	let form = $("form[name='contact-form']");
@@ -213,11 +213,13 @@
 
 	lpDrop.on('click', function(){
 		lpDrop.toggleClass('is-active');
+		lpDrop.find(".dropdown-trigger button span svg").toggleClass('upside-down');
 	});
 
 	formCountDrop.on('click', function(e){
 		e.preventDefault();
 		formCountDrop.parent().toggleClass('is-active');
+		formCountDrop.find("button .level-right span svg").toggleClass('upside-down');
 	});
 
 	formClose.on('click', function(e){
@@ -225,22 +227,58 @@
 		formCountDrop.parent().toggleClass('is-active');
 	}); 
 
+	var dateSettings = {
+		today: '',
+  		clear: '',
+	}
+
 	//datepicker settings
-	const arrDate = datepicker('#arrival-date',{
-		minDate: new Date(),
-		formatter: function(el, date) {
-    		el.value = date.toLocaleDateString();
+	arrivalDate.pickadate({
+		today: '',
+  		clear: '',
+  		format: 'm/d/yy',
+  		min: new Date(),
+  		klass:{
+  			header: 'picker__header arr-pick-header'
   		},
-  		disableMobile: true
+  		onSet: function(context) {
+    		departureDate.focus();
+  		}
+	});
+	departureDate.pickadate({
+		today: '',
+  		clear: '',
+  		format: 'm/d/yy',
+  		klass:{
+  			header: 'picker__header dep-pick-header'
+  		},
+  		min: new Date()
 	});
 
-	const depDate = datepicker('#departure-date',{
-		minDate: new Date(),
-		formatter: function(el, date) {
-    		el.value = date.toLocaleDateString();
-  		},
-  		disableMobile: true
-	});
+	$( ".arr-pick-header" ).before( "<div class='is-size-3 has-text-centered has-text-weight-semibold' style='padding:13px; border-bottom:1px solid lightgray;'>Arrival Date</div>" );
+	$( ".dep-pick-header" ).before( "<div class='is-size-3 has-text-centered has-text-weight-semibold' style='padding:13px; border-bottom:1px solid lightgray;'>Departure Date</div>" );
+
+
+
+	$('body').on('keydown', 'input, select, textarea', function(e) {
+    var self = $(this)
+      , form = self.parents('form:eq(0)')
+      , focusable
+      , next
+      ;
+    if (e.keyCode == 13) {
+        focusable = form.find('input,a,select,button,textarea').filter(':visible');
+        next = focusable.eq(focusable.index(this)+1);
+        if (next.length) {
+            next.focus();
+        } else {
+            form.submit();
+        }
+        return false;
+    }
+});
+
+
 
 }) (jQuery);
 
