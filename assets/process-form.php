@@ -1,7 +1,7 @@
 <?php 
 	echo '<body style="background-color:#FFFFFF">';
 	if (count($_POST)>0){
-		$to = 'developer@clubbing101.com';
+		$to = 'submissions@clubbing101.com';
 		$subject = 'A contact form has been submitted';
 		$message = '';
 		$headers = "From: ${_POST['email']}";
