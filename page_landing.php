@@ -11,10 +11,10 @@
         </div>      
 </header>
 
-<div class="page-content main-img"> <!-- Begin Content Container - Closed in Footer-->
+<div class="page-content main-img" style="background-image:url('<?php echo get_template_directory_uri(); ?>/assets/images/city-vegas.jpg'")> <!-- Begin Content Container - Closed in Footer-->
     <div style="min-height:600px">
         <section class="hero">
-            <div class="hero-body">
+            <div class="hero-body landing-hero">
                 <div class="container">
                     <h2 class="title is-size-2 has-text-centered">Clubbing Done Right</h2>
                     <h4 class="subtitle is-size-4 has-text-centered">Enter your travel destination below to start connecting with a nightlife expert</h4>

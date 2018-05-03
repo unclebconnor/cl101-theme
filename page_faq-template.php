@@ -15,14 +15,14 @@
     <div class="container content-area">
         <div class="columns">
             <div class="has-text-centered column is-10 is-offset-1">
-                <div class="columns">
-                    <div class="column is-6 has-text-left">
+                <div class="columns lil-bottom-margin">
+                    <div class="column is-6 has-text-left lil-pad ">
                         <h3 class="is-size-3 has-text-centered">Nightclub Promoter</h3>
                         <ol>
                             <li><p>Responsible for getting people to come to the club through general admission and guest list.</p></li>
                         </ol>
                     </div>
-                    <div class="column is-6 has-text-left">
+                    <div class="column is-6 has-text-left lil-pad">
                         <h3 class="is-size-3 has-text-centered">Nightclub Host</h3>
                         <ol>
                             <li><p>Responsible for booking and managing table service clients</p></li>
@@ -32,10 +32,14 @@
                 </div>
             </div> 
         </div>
-        <div class="columns">
-            <div class="has-text-centered column is-10 is-offset-1 has has-text-centered">
-                <h2 class="is-size-2 text-has-weight-semibold">Help Us Grow</h2>
-                <p>Your support and contributions will enable us to create jobs and hit our goals, expanding into your favorite cities and connecting you to nightlife professionals worldwide.</p>
+    </div>
+    <div class="faq-img"  style="background-image:url('<?php echo get_template_directory_uri(); ?>/assets/images/clubbing-background.jpg');">
+        <div class="columns faq-bg-area";>
+            <div class="has-text-centered column is-8 is-offset-2 is-flex valign-center">
+                <div class="wrapping">
+                    <h2 class="is-size-2 text-has-weight-semibold">Help Us Grow</h2>
+                    <p>Your support and contributions will enable us to create jobs and hit our goals, expanding into your favorite cities and connecting you to nightlife professionals worldwide.</p>
+                </div>
             </div> 
         </div>
         <div class="columns">

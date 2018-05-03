@@ -91,7 +91,7 @@ svg.upside-down  {
 }
 
 .lil-pad {
-    padding: 13px;
+    padding: 13px !important;
 }
 
 .inline-block {
@@ -117,6 +117,9 @@ svg.upside-down  {
 
 /* END HELPERS */
 
+.landing-hero{
+    margin-top:80px;
+}
 
 /* HEADER */
 header {
@@ -149,9 +152,6 @@ nav {
     text-align: right;
 }
 
-#lp-dropdown{
-    margin-top: 150px;
-}
 
 .header-item {
     top: 8px;
@@ -204,6 +204,7 @@ nav {
 
 .form-area{
     min-height: 450px;
+    margin-top: -70px !important;
 }
 
 .flex-sa{
@@ -300,13 +301,27 @@ footer.copyright {
 
 /* BACKGROUND IMAGE STUFF */
 .main-img{
-    background-image: url("../images/city-vegas.jpg");
+    /*background-image: url("../images/city-vegas.jpg");*/
     height: 100%; 
     background-attachment: fixed;
     background-position: top;
     background-repeat: no-repeat;
-    /*background-size: cover;*/
+    background-size: cover !important;
 }
+
+.faq-img{
+    /*background-image: url("../images/city-vegas.jpg");*/
+    height: 100%; 
+    background-attachment: fixed;
+    background-position: top;
+    background-repeat: no-repeat;
+    background-size: cover !important;
+}
+
+.faq-bg-area{
+    min-height: 450px;
+}
+
 
 /*.parallax-window {
     height: 550px;

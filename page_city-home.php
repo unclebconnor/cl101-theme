@@ -4,7 +4,7 @@
 
 <?php get_template_part('page-header'); ?>
 
-<div class="page-content  main-img"> <!-- Begin Content Container - Closed in Footer-->
+<div class="page-content main-img"  style="background-image:url('<?php echo get_template_directory_uri(); ?>/assets/images/city-<?php echo strtolower(str_replace(' ','-', get_the_title($post->post_parent))); ?>.jpg')"> <!-- Begin Content Container - Closed in Footer-->
     <section class="hero">
         <div class="hero-body">
             <div class="container">

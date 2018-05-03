@@ -65,7 +65,7 @@
                     </div>
                     <div class="column is-6 has-text-centered is-flex valign-center lil-side-margin">
                         <div>
-                            <h3 class="is-size-3">Connect with your host when you arrive</h3>
+                            <h3 class="is-size-3">Connect with a night when you arrive</h3>
                             <p>Feel confident that you have a known commodity, a trusted host who has the skills and connections to help you on every trip you make to Vegas.</p>
                         </div>
                     </div>
